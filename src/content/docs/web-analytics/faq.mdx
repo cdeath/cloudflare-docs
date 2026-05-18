@@ -54,7 +54,7 @@ If you have a `Cache-Control` header set to `public, no-transform`, Cloudflare p
 
 ### Why am I getting a `405 Method Not Allowed` error from `/cdn-cgi/rum`?
 
-The `/cdn-cgi/rum` endpoint only accepts `POST` requests for data ingestion. If you send a request using any other HTTP method (for example, `GET`, `PUT`, or `DELETE`), the endpoint returns a `405 Method Not Allowed` response with an `Allow: POST, OPTIONS` header.
+The `/cdn-cgi/rum` endpoint only accepts `POST` requests for data ingestion. If you send a request using any other HTTP method (for example, `GET`, `PUT`, or `DELETE`), the endpoint returns a `405 Method Not Allowed` response with an `Allow: POST, OPTIONS` header (`OPTIONS` is allowed for [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS) support).
 
 The Web Analytics beacon (`beacon.min.js`) always uses `POST` when reporting metrics. If you see `405` errors in your logs, the requests are not coming from the beacon itself.
 
